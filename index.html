@@ -1,0 +1,308 @@
+{% load static %}
+
+<!doctype html>
+<html>
+    <head>
+        <title>Loan predictor</title>
+        <link rel="stylesheet" href="{% static 'website/css/index.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/pointer.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+        <style type="text/css">
+            html, body {
+                background: rgba(0,0,0,0);
+            }
+        </style>
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1],
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'How Much Pizza I Ate Last Night',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+    </head>
+    <body>
+    
+        <nav class="navbar navbar-expand-lg">
+             &nbsp; <a class="navbar-brand" href="{% url 'index' %}"><i class="fas fa-chart-pie"></i>  Loan Predictor</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'details' %}">Predict</a>
+                  </li>
+                  
+                  
+                  
+              </div>
+        </nav>
+        <h1 class="heading"> Welcome to Loan Predictor </h1>
+        <div class="columns-container">
+            <div class="row">
+                <div class="col-lg-3 border-1 c1">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <i class="fas fa-chart-line" style="font-size: 7vh;"></i>
+                                    <br>
+
+                                    <div class="column-1">Predict Loan</div>
+                                    
+                                    <div class="column-1-desc">Predict your loan <br>from one of the best predictor</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1>--</h1>
+                                    <p>Architect & Engineer</p>
+                                    <p>We </p>
+                                </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-lg-3 border-1 c2">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <i class="fas fa-search-dollar" style="font-size: 7vh;"></i>
+                                    <br>
+
+                                    <div class="column-1">Analyse</div>
+                                    
+                                    <div class="column-1-desc">Checkout out our <br>analysis based on your entries</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1>--</h1>
+                                    <p>Architect & Engineer</p>
+                                    <p>We</p>
+                                </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-lg-3 c2">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <i class="fas fa-university" style="font-size: 7vh;"></i>
+                                    <br>
+
+                                    <div class="column-1">Partners</div>
+                                    
+                                    <div class="column-1-desc">Checkout trends of <br>our partnered banks around the world</div>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h1>--</h1>
+                                    <p>Architect & Engineer</p>
+                                    <p>We</p>
+                                </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="get-started">
+            <a href="{% url 'details' %}">
+                <button type="button" class="btn btn-outline-light">Get Started</button>
+            </a>
+        </div>   
+        <!--<div id="chart_div"></div>-->
+        
+        <div class="footer">
+            Liked our product???<br>
+             </div>
+        <!-- script for background and pointer -->
+        <script src="{% static 'website/js/sketch.js' %}"></script>
+        <script>
+        
+        // ----------------------------------------
+        // Particle
+        // ----------------------------------------
+
+        function Particle( x, y, radius ) {
+            this.init( x, y, radius );
+        }
+
+        Particle.prototype = {
+
+            init: function( x, y, radius ) {
+
+                this.alive = true;
+
+                this.radius = radius || 5;
+                this.wander = 0.15;
+                this.theta = random( TWO_PI );
+                this.drag = 0.3;
+                this.color = '#fff';
+
+                this.x = x || 0.0;
+                this.y = y || 0.0;
+
+                this.vx = 0.0;
+                this.vy = 0.0;
+            },
+
+            move: function() {
+
+                this.x += this.vx;
+                this.y += this.vy;
+
+                this.vx *= this.drag;
+                this.vy *= this.drag;
+
+                this.theta += random( -0.5, 0.5 ) * this.wander;
+                this.vx += sin( this.theta ) * 0.1;
+                this.vy += cos( this.theta ) * 0.1;
+
+                this.radius *= 0.96;
+                this.alive = this.radius > 0.9;
+            },
+
+            draw: function( ctx ) {
+
+                ctx.beginPath();
+                ctx.arc( this.x, this.y, this.radius, 0, TWO_PI );
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        };
+
+        // ----------------------------------------
+        // Example
+        // ----------------------------------------
+
+        var MAX_PARTICLES = 100;
+        var COLOURS = [ 'rgba(255,255,255,0.3)'];
+
+        var particles = [];
+        var pool = [];
+
+        var demo = Sketch.create({
+            container: document.getElementById( 'container' ),
+            retina: 'auto'
+        });
+
+        demo.setup = function() {
+
+            // Set off some initial particles.
+            var i, x, y;
+
+            for ( i = 0; i < 2; i++ ) {
+                x = ( demo.width * 0.1 ) + random( -100, 50 );
+                y = ( demo.height * 0.1 ) + random( -100, 50 );
+                demo.spawn( x, y );
+            }
+        };
+
+        demo.spawn = function( x, y ) {
+            
+            var particle, theta, force;
+
+            if ( particles.length >= MAX_PARTICLES )
+                pool.push( particles.shift() );
+
+            particle = pool.length ? pool.pop() : new Particle();
+            particle.init( x, y, random( 5, 10 ) );
+
+            particle.wander = random( 0.5, 1.0 );
+            particle.color = random( COLOURS );
+            particle.drag = random( 0.9, 0.99 );
+
+            theta = random( TWO_PI );
+            force = random( 2, 8 );
+
+            particle.vx = sin( theta ) * force;
+            particle.vy = cos( theta ) * force;
+
+            particles.push( particle );
+        };
+
+        demo.update = function() {
+
+            var i, particle;
+
+            for ( i = particles.length - 1; i >= 0; i-- ) {
+
+                particle = particles[i];
+
+                if ( particle.alive ) particle.move();
+                //else pool.push( particles.splice( i, 1 )[0] );
+            }
+        };
+
+        demo.draw = function() {
+
+            demo.globalCompositeOperation  = 'lighter';
+
+            for ( var i = particles.length - 1; i >= 0; i-- ) {
+                particles[i].draw( demo );
+            }
+        };
+
+        demo.mousemove = function() {
+
+            var particle, theta, force, touch, max, i, j, n;
+
+            for ( i = 0, n = demo.touches.length; i < n; i++ ) {
+
+                touch = demo.touches[i], max = random( 1, 4 );
+                for ( j = 0; j < max; j++ ) {
+                  demo.spawn( touch.x, touch.y );
+                }
+
+            }
+        };
+        
+        </script>
+        
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
+    <script>
+        bubbly({
+      colorStart: 'black',
+      colorStop: '#1f3b68',
+      bubbles:250,
+      blur:1,
+      compose: 'source-over',
+      bubbleFunc:() => `hsla(${200 + Math.random() * 50}, 100%, 50%, .3)`,
+      angleFunc:() => Math.random() > 0.5 ? Math.PI : 2 * Math.PI,
+      velocityFunc:() => 1 + Math.random() * 2,
+      radiusFunc:() => Math.random() * 1.5
+    });
+    </script>
+</html>

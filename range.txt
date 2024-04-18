@@ -1,0 +1,13 @@
+credit : 0-1
+age: 20-80
+30-59: 0-5
+debt:0-3
+income:1500-300000
+dependents:0-5
+90:0-4
+real estate:0-7
+60-89:0-3
+open credit lines and loan:1-13
+
+
+
